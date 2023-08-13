@@ -10,11 +10,11 @@ import com.study.springboot.data.repository.ProductRepository;
 @Service
 public class ProductDaoImpl implements ProductDao{
 	
-	//미리 레퍼지토리라는 객체를 빈으로 띄우고 이 하나를 여러곳에서 사용하는 방식이 부트이다?
+	//미리 레퍼지토리라는 객체를 빈으로 띄우고 이 하나 객체를 여러곳에서 사용하는 방식이 부트이다?
 	ProductRepository productRepository;
 	
 	@Autowired
-	//자동으로 연결 , 즉 의존성 주입
+	//자동으로 연결, 즉 의존성 주입
 	public ProductDaoImpl(ProductRepository productRepository) {
 		this.productRepository= productRepository;
 	}
