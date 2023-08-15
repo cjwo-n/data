@@ -31,8 +31,11 @@ dependencies {
 	//oralce
 	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
 	
+	//validation - 유효성 검사
 	
-}
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	
+}	
 
 tasks.named('test') {
 	useJUnitPlatform()
