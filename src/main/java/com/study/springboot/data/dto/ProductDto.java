@@ -4,6 +4,8 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import com.study.springboot.data.entity.ProductEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -34,6 +36,14 @@ public class ProductDto {
 	private int productStock;	//상품 제고
 	
 	//어떤 데이터를 받고 넘길 것이냐가 고려해서 설계해야됨
+	public ProductEntity toEntity() {
+		return ProductEntity.builder()
+				.productId(productId)
+				.productName(productName)
+				.productPrice(productPrice)
+				.productStock(productStock)
+				.build();
+	}
 }
 //유효성 검증 (Validation)
 //@NotNull : 해당 값에 Null을 허용하지 않음

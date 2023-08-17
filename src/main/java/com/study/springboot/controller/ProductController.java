@@ -1,6 +1,8 @@
 package com.study.springboot.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,7 +31,7 @@ public class ProductController {
 		return productService.getProduct(productId);
 	}
 	@PostMapping(value = "/product")
-	public ProductDto createProduct(@RequestBody ProductDto productDto) {
+	public ResponseEntity<ProductDto> createProduct(@RequestBody ProductDto productDto) {
 		//dto는 각 계층간에 데이터를 옮기는 역할 
 			String productId = productDto.getProductId();
 			
@@ -37,6 +39,10 @@ public class ProductController {
 			int productPrice = productDto.getProductPrice();	
 			int productStock = productDto.getProductStock();
 			
-			return productService.saveProduct(productId,productName,productPrice, productStock);
+			ProductDto response = productService
+					.saveProduct(productId, productName, productPrice, productStock);
+			
+			//return productService.saveProduct(productId,productName,productPrice, productStock);
+			return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
 }
