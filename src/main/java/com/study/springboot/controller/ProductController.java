@@ -32,7 +32,12 @@ public class ProductController {
 	}
 	@PostMapping(value = "/product")
 	public ResponseEntity<ProductDto> createProduct(@RequestBody ProductDto productDto) {
-		//dto는 각 계층간에 데이터를 옮기는 역할 
+		
+		//dto는 각 계층간에 데이터를 옮기는 역할
+		
+//		if(productDto.getProductId().equals("")|| productDto.getProductId().isEmpty()) {
+//			LOGGER.error()
+//		}
 			String productId = productDto.getProductId();
 			
 			String productName = productDto.getProductName();
