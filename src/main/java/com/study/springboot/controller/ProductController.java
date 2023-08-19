@@ -37,6 +37,7 @@ public class ProductController {
 		
 //		if(productDto.getProductId().equals("")|| productDto.getProductId().isEmpty()) {
 //			LOGGER.error()
+//		return ResponseEntity.status(HttpStatus.BAD.REQUSET).body(productDto);		
 //		}
 			String productId = productDto.getProductId();
 			
