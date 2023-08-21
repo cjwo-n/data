@@ -36,7 +36,7 @@ public class ProductController {
 		//dto는 각 계층간에 데이터를 옮기는 역할
 		
 //		if(productDto.getProductId().equals("")|| productDto.getProductId().isEmpty()) {
-//			LOGGER.error()
+//			LOGGER.error("[createProducct] failed Response :: productId is Empty")
 //		return ResponseEntity.status(HttpStatus.BAD.REQUSET).body(productDto);		
 //		}
 			String productId = productDto.getProductId();

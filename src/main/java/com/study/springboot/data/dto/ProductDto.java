@@ -31,8 +31,8 @@ public class ProductDto {
 	private int productPrice;	//상품 가격
 	
 	@NotNull
-	@Min(value = 8)
-	@Max(value = 9999)
+	@Min(value = 8)		//최소 개수
+	@Max(value = 9999)	//최대 개수
 	private int productStock;	//상품 제고
 	
 	//어떤 데이터를 받고 넘길 것이냐가 고려해서 설계해야됨
